@@ -1,0 +1,513 @@
+body {
+
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  position: relative;
+
+  min-height: 100vh;
+
+  /*overflow: hidden;  /* Quitar en caso de querer bajar la página */
+
+  background-color: #0d1627;
+
+}
+
+
+
+body::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: linear-gradient(to bottom, #111e35, #0d1627);
+
+  filter: blur(20px);
+
+  -webkit-filter: blur(20px);
+
+  z-index: -1;
+
+}
+
+
+
+/* encabezado */
+
+.hero {
+
+  position: relative;
+
+  height: 500px;
+
+}
+
+
+
+.hero-image {
+
+  width: 100%;
+
+  height: 120%;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+
+}
+
+
+
+.hero-image::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(to bottom,
+
+      rgba(8, 14, 26, 0.6),
+
+      /* opacidad */
+
+      rgba(17, 30, 53, 0.3)
+
+      /* opacidad */
+
+    );
+
+  z-index: 0;
+
+  /* para poner debajo del texto y botones */
+
+}
+
+
+
+.hero-image .fondo {
+
+  position: absolute;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  /*  que la imagen se adapte */
+
+  z-index: -1;/
+
+  /* encima del degradado */
+
+}
+
+
+
+.logo {
+
+  position: absolute;
+
+  top: 25%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: white;
+
+  font-size: 80px;
+
+  font-weight: bold;
+
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+
+  z-index: 1;
+
+  /* encima del degradado */
+
+}
+
+
+
+.buttons {
+
+
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: row;
+
+  gap: 30px;
+
+  z-index: 1;
+
+  /* encima del degradado */
+
+}
+
+
+
+.btn {
+
+  background-color: rgba(87, 52, 13, 0.5);
+
+  color: white;
+
+  border: 1px solid white;
+
+  padding: 20px 35px;
+
+  border-radius: 10px;
+
+  font-size: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+
+
+}
+
+
+
+.btn:hover {
+
+  background-color: rgba(87, 52, 13, 0.986);
+
+  /* más oscuro al pasar el mouse */
+
+  border-color: #382202;
+
+  box-shadow: 0 0 12px #382202;
+
+  transform: translateY(-2px);
+
+}
+
+
+
+.btn img {
+
+  width: 28px;
+
+  height: 28px;
+
+}
+
+.btn-avatar {
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 2px solid #d2a679;
+
+}
+
+
+
+#btn-nosotros img {
+
+  width: 44px;
+
+  height: 50px;
+
+}
+
+
+
+/*pie de pagina */
+
+footer {
+
+  text-align: center;
+
+  padding: 1rem 0;
+
+  background-color: #2742742c;
+
+  color: white;
+
+  position: relative;
+
+  width: 100%;
+
+  bottom: 0;
+
+  z-index: 10;
+
+}
+
+
+
+/* -------------Cerrar sesión--------------- */
+
+.cerrarSesion-divider {
+
+  position: absolute;
+
+  top: 15px;
+
+  right: 20px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 2px solid #357ABD;
+
+  border-radius: 8px;
+
+  background-color: rgba(13, 22, 39, 0.9);
+
+  padding: 10px;
+
+  margin-bottom: 20px;
+
+  margin-top: 20px;
+
+  z-index: 100;
+
+  /* encima del degradado */
+
+
+
+}
+
+
+
+.cerrarSesion-link {
+
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  /*Quita las rayita azul*/
+
+  margin-left: 5px;
+
+}
+
+
+
+.cerrarSesion-divider a {
+
+  color: white;
+
+  font-size: 18px;
+
+}
+
+
+
+.cerrarSesion-divider:hover {
+
+  background-color: #357ABD;
+
+}
+
+
+
+/* ---------Que no se vean las rayitas de los links----------- */
+
+.buttons a {
+
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  color: white;
+
+}
+
+
+
+/*contenedor nosotros */
+
+.nosotros-container {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  color: white;
+
+
+
+  margin: 120px auto 40px auto;
+
+  padding: 20px;
+
+
+
+  background: rgba(255, 255, 255, 0.2);
+
+  /* Fondo semi-transparente estilo cristal */
+
+  backdrop-filter: blur(10px);
+
+  /* Efecto Glassmorphism */
+
+  border-radius: 12px;
+
+
+
+  width: 90%;
+
+  max-width: 1000px;
+
+  box-sizing: border-box;
+
+}
+
+
+
+.nosotros-container h2 {
+
+  font-size: 48px;
+
+}
+
+
+
+/* Redes Sociales */
+
+#redes-container {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+
+    gap: 50px;
+
+    padding: 20px;
+
+    margin-bottom: -20px;
+
+}
+
+
+
+.red-social {
+
+    display: flex;
+
+    /* Imagen a la izquierda, texto a la derecha*/
+
+    gap: 15px;
+
+    border: 3px solid #0d1627;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+    transition: transform 0.2s;
+
+    width: 200px;
+
+    height: 50px;
+
+}
+
+
+
+.red-social img {
+
+  width: 50px;
+
+  height: 50px;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+
+  margin-right: 10px;  
+
+}
+
+
+
+.red-social a {
+
+  color: white;
+
+  font-size: 18px;
+
+}
+
+
+
+.redes-link {
+
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  /*Quita las rayita azul*/
+
+  margin-left: 5px;
+
+}
+
+
+
+.red-social:hover {
+
+  background-color: #0d1627; 
+
+}

@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    /*Se asegura de que cubra toda la pantalla*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    /*Fondo*/
+    background: linear-gradient(to bottom,
+            rgba(8, 14, 26, 0.70),
+            rgba(17, 30, 53, 0.5)),
+        url("../img/papelArrugado.jpg");
+    background-attachment: fixed;
+    /*Que no se mueva al scrollear*/
+}
+
+.auth-box {
+    background: rgba(255, 255, 255, 0.3);
+    /* Fondo semi-transparente estilo cristal */
+    backdrop-filter: blur(10px);
+    /* Efecto Glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+
+}
+
+.containter-head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px
+} 
+
+.container-head h1 {
+    margin: 0;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+.auth-logo {
+    background-color: #744f0b;;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    padding: 5px;
+    margin-right: 20px;
+    margin-left: -20px;
+}
+
+.auth-logo span {
+    color: #00cef4;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    /*Responsividad, aka se adapte*/
+    flex-direction: column;
+    /*Todo se ponga en forma de columnas*/
+}
+
+h1 {
+    color: white;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: white;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    /*Redondea los bordes*/
+    font-size: 16px;
+    /*Tamaño de la letra*/
+}
+
+input:focus, select:focus { /*Evento que sucede cuando le das foco a algo*/
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 12px #00d4ff;
+    box-shadow: 0 0 5px rgba(74, 344, 226, 0.3);
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 15px 20px; /* 15px de separación vertical, 20px horizontal */
+    width: 100%;
+}
+
+/* Configuración de inputs y selects internos */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.password {
+    width: 200px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color:rgba(13, 22, 39, 0.9);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover { /*Cuando pasas el mouse*/
+    background-color: #357ABD;
+}
+
+.divider {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center a {
+    text-decoration-color: aqua;
+    color: aqua;
+}
+
+ /* Para el botón home */
+header {
+    padding: 1rem 0;
+}
+
+.home-container {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #357ABD;
+    border-radius: 8px;
+    background-color:rgba(13, 22, 39, 0.9);
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /*Quita las rayita azul*/
+    margin-left: 5px;
+}
+
+.home-container p {
+    color: white;
+    font-size: 18px;
+}
+
+.home-container img {
+    width: 50px;
+}
+
+.home-container:hover {
+    background-color: #357ABD;
+}

@@ -1,0 +1,371 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
+  
+}
+
+body::before {
+
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background: url("../img/catalogoBanner.png") center center/cover no-repeat fixed;
+  z-index: -1;
+}
+
+/* encabezado */
+.hero {
+  position: relative;
+  height: 400px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(8, 14, 26, 0.6),
+      /* opacidad */
+      rgba(17, 30, 53, 0.3)
+      /* opacidad */
+    );
+  z-index: 0;
+  /* para poner debajo del texto y botones */
+}
+
+.hero-image .fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /*  que la imagen se adapte */
+  z-index: -1;
+  /* encima del degradado */
+}
+
+.logo {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  /* encima del degradado */
+}
+
+.buttons {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  z-index: 100;
+  /* encima del degradado */
+}
+
+.tab-btn {
+  background-color: rgba(39, 32, 13, 0.7);
+  color: white;
+  border: 1px solid white;
+  padding: 20px 35px;
+  border-radius: 10px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.tab-btn:hover {
+  background-color: rgba(13, 22, 39, 0.9);
+  /* más oscuro al pasar el mouse */
+  border-color: #00d4ff;
+  box-shadow: 0 0 12px #00d4ff;
+  transform: translateY(-2px);
+}
+
+.tab-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+.tab-btn li {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  /* Quita las rayita azul */
+  list-style: none;
+}
+
+.btnAgregar {
+  background-color: rgba(13, 22, 39, 0.7);
+  color: white;
+  border: 1px solid white;
+  padding: 20px 35px;
+  border-radius: 10px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btnAgregar:hover {
+  background-color: rgba(13, 22, 39, 0.9);
+  /* más oscuro al pasar el mouse */
+  border-color: #00d4ff;
+  box-shadow: 0 0 12px #00d4ff;
+  transform: translateY(-2px);
+}
+
+.btnAgregar img {
+  width: 28px;
+  height: 28px;
+}
+
+.btnAgregar li {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  /* Quita las rayita azul */
+  list-style: none;
+}
+
+/* Para los cuadritos donde aparecen las fotos y la descripción */
+.fotos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* Imagen abajo del texto*/
+  border: 2px solid white;
+  margin: 30px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  width: 500px;
+  height: 750px;
+  padding: 20px 10px;
+  align-items: center;
+}
+
+.fotos-container h1, h2 {
+  color: white;
+  text-align: center;
+}
+
+#articulos img {
+  height: 200px;
+  width: 200px;  
+  margin: 20px;
+  border-radius: 12px;
+}
+  
+#articulos .fotos-container {
+  width: 300px;
+  height: 600px;  
+}
+
+#servicios, #articulos {
+  display: flex;
+  flex-direction: row;  
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---------------Para Admin-------------- */
+.cuadritos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* Imagen abajo del texto*/
+  border: 2px solid white;
+  margin: 30px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  width: 500px;
+  height: 800px;
+  padding: 20px 10px;
+  align-items: center;
+}
+
+.cuadritos-container h1,h2 {
+  color: white;
+  text-align: center;
+}
+.cuadritos-container h2 {
+  margin-top: -5px;
+}
+  
+#articulos .cuadritos-container {
+  width: 300px;  
+  height: 550px;  
+}
+
+/* Imagenes deslizantes */
+.slider {
+  overflow: hidden;
+  width: 400px;
+  height: 500px;
+  border-radius: 12px;
+  margin: 50px;
+}
+
+.slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: auto;
+  animation: 20s slider infinite;
+}
+
+.slider figure img {
+  width: 20%;
+  height: 400px;
+  float: left;
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 0;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+
+/* Para la parte de que aparezca y desaparezca */
+.hidden {
+  display: none !important;
+}
+
+/* En esta parte son cosas para admin.php*/
+
+.btn-modificar:hover {
+  background-color: rgba(13, 22, 39, 0.9);
+  /* más oscuro al pasar el mouse */
+  border-color: #00d4ff;
+  box-shadow: 0 0 12px #00d4ff;
+  transform: translateY(-2px);
+}
+
+.btn-modificar {
+  background-color: rgba(13, 22, 39, 0.7);
+  border: 1px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 75px;
+  width: 200px;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 0;
+}
+
+.modificar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra todo horizontalmente */
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    gap: 10px; /* Espacio entre la palabra y la casita */
+}
+
+.modificar-link span {
+    color: white;
+    font-size: 24px; 
+    margin: 0;
+}
+
+ /* Para el botón home */
+.home-container {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #357ABD;
+    border-radius: 8px;
+    background-color:rgba(13, 22, 39, 0.9);
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    z-index: 100; /* encima del degradado */
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Quita las rayita azul */
+    margin-left: 5px;
+    
+}
+
+.home-container p {
+    color: white;
+    font-size: 18px;
+}
+
+.home-container img {
+    width: 50px;
+}
+
+.home-container:hover {
+    background-color: #357ABD;
+}
+
+.aviso-login {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.aviso-login a {
+    text-decoration-color: aqua;
+    color: aqua;
+}
